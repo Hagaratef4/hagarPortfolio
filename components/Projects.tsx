@@ -223,7 +223,7 @@ export default function Projects() {
           <motion.div
             variants={revealVariants}
             style={{ y: parallax2 }}
-            className="absolute top-[35%] right-[5%] md:right-[8%] w-[45%] md:w-[40%] z-30"
+            className="absolute top-[35%] right-[5%] md:right-[8%] w-[55%] md:w-[50%] z-30"
           >
             <Link href={`/projects/${eCommerce.slug}`} className="block group">
               <motion.div
@@ -232,7 +232,7 @@ export default function Projects() {
                 className="relative"
               >
                 {/* Panel */}
-                <div className="relative aspect-[4/3] overflow-hidden bg-neutral/15 rounded-lg shadow-xl">
+                <div className="relative aspect-[16/10] md:aspect-[16/9] overflow-hidden bg-neutral/15 rounded-lg shadow-xl">
                   <SafeImage
                     src={eCommerce.image}
                     alt={`${eCommerce.title} preview`}

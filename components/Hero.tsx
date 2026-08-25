@@ -82,38 +82,38 @@ export default function Hero({ isVisible }: HeroProps) {
       </motion.div>
 
       {/* Main Hero Content - Art-Directed Composition */}
-      <div className="relative z-10 flex-1 flex items-center lg:items-start">
-        <div className="mx-auto w-full max-w-[1600px] px-6 md:px-10 lg:px-16 py-4 md:py-6 lg:py-8">
+      <div className="relative z-10 flex-1 flex items-start">
+        <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 md:px-10 lg:px-16 pt-18 md:pt-20 lg:pt-8 pb-8">
           
           {/* Asymmetric Layout - Text Left, Portrait Overlapping Right */}
-          <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-center">
+          <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-6 lg:gap-8 items-start">
             
             {/* Left: Editorial Typography */}
             <motion.div
               variants={containerVariants}
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
-              className="relative z-20 lg:col-span-5 flex flex-col justify-end pb-8 lg:pb-12"
+              className="relative z-20 lg:col-span-5 flex flex-col justify-center pb-4 md:pb-6 lg:pb-12"
             >
               {/* Greeting */}
               <motion.p
                 variants={itemVariants}
-                className="mb-4 font-sans text-lg tracking-[0.3em] text-olive uppercase font-semibold"
+                className="mb-4 lg:mt-35 font-sans text-xs sm:text-sm md:text-base lg:text-lg tracking-[0.25em] md:tracking-[0.3em] text-charcoal/60 uppercase font-semibold"
               >
                 Hi, I'm Hagar Atef
               </motion.p>
 
               {/* Main Headline - Large Editorial */}
-              <h1 className="font-serif font-normal tracking-tight text-charcoal leading-[0.88]">
+              <h1 className="font-serif font-normal tracking-tight text-charcoal leading-[0.92] md:leading-[0.9] lg:leading-[0.88]">
                 <motion.span
                   variants={itemVariants}
-                  className="block text-[clamp(4rem,12vw,7rem)]"
+                  className="block text-[clamp(2.2rem,8vw,4.5rem)] md:text-[clamp(2.8rem,10vw,5.5rem)] lg:text-[clamp(4rem,12vw,7rem)]"
                 >
                   FRONTEND
                 </motion.span>
                 <motion.span
                   variants={itemVariants}
-                  className="block text-[clamp(4rem,12vw,7rem)] ml-4 md:ml-8 lg:ml-12"
+                  className="block text-[clamp(2.2rem,8vw,4.5rem)] md:text-[clamp(2.8rem,10vw,5.5rem)] lg:text-[clamp(4rem,12vw,7rem)] ml-2 md:ml-3 lg:ml-12"
                 >
                   DEVELOPER
                 </motion.span>
@@ -122,7 +122,7 @@ export default function Hero({ isVisible }: HeroProps) {
               {/* Supporting Statement */}
               <motion.p
                 variants={itemVariants}
-                className="mt-8 max-w-md font-sans text-base md:text-lg leading-relaxed text-charcoal/70"
+                className="mt-5 md:mt-6 lg:mt-8 max-w-md font-sans text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed text-charcoal/70"
               >
                 I build modern, responsive digital experiences with clean code, thoughtful interactions, and strong visual design.
               </motion.p>
@@ -130,11 +130,11 @@ export default function Hero({ isVisible }: HeroProps) {
               {/* CTAs */}
               <motion.div
                 variants={itemVariants}
-                className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-5"
+                className="mt-6 md:mt-8 lg:mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-4 lg:gap-5"
               >
                 <Link
                   href="/projects"
-                  className="group inline-flex items-center gap-3 px-7 py-4 bg-charcoal text-cream font-sans text-xs tracking-[0.2em] font-medium transition-all duration-300 hover:bg-olive hover:text-charcoal hover:shadow-lg"
+                  className="group inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 lg:px-7 py-2.5 md:py-3 lg:py-4 bg-charcoal text-cream font-sans text-[9px] sm:text-[10px] md:text-xs tracking-[0.2em] font-medium transition-all duration-300 hover:bg-olive hover:text-charcoal hover:shadow-lg"
                 >
                   VIEW MY WORK
                   <ArrowRight
@@ -145,7 +145,7 @@ export default function Hero({ isVisible }: HeroProps) {
 
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-2 font-sans text-xs tracking-[0.2em] text-charcoal font-medium transition-colors hover:text-olive"
+                  className="group inline-flex items-center gap-2 font-sans text-[9px] sm:text-[10px] md:text-xs tracking-[0.2em] text-charcoal font-medium transition-colors hover:text-olive"
                 >
                   LET'S TALK
                   <ArrowRight
@@ -162,7 +162,7 @@ export default function Hero({ isVisible }: HeroProps) {
               variants={portraitVariants}
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
-              className="relative lg:col-span-6 flex items-end justify-center lg:justify-end min-h-[500px] sm:min-h-[600px] lg:min-h-[700px]"
+              className="relative lg:col-span-6 flex items-center justify-center lg:justify-end min-h-[300px] sm:min-h-[400px] md:min-h-[550px] lg:min-h-[700px] pt-8 md:pt-12 lg:pt-0"
             >
               {/* Organic Green Shape - Behind Portrait */}
               <motion.div
@@ -175,19 +175,19 @@ export default function Hero({ isVisible }: HeroProps) {
               </motion.div>
 
               {/* Large Portrait */}
-              <div className="relative z-10 min-w-100 flex items-start justify-center">
+              <div className="relative z-10 min-w-100 flex items-center justify-center">
                 <Image
                   src="/images/IMG_1577-Photoroom.png"
                   alt="Hagar Atef portrait"
                   width={800}
                   height={1067}
-                  className="relative z-10 w-[75%] sm:w-[70%] md:w-[65%] lg:w-[75%] xl:w-[80%] max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[750px] xl:max-w-[850px] h-auto object-contain object-bottom drop-shadow-2xl"
-                  sizes="(max-width: 768px) 75vw, (max-width: 1200px) 65vw, 750px"
+                  className="relative z-10 w-full sm:w-[40%] md:w-[85%] lg:w-[65%] xl:w-[75%] max-w-[250px] sm:max-w-[320px] md:max-w-[500px] lg:max-w-[700px] xl:max-w-[800px] h-auto object-contain object-bottom drop-shadow-2xl"
+                  sizes="(max-width: 640px) 45vw, (max-width: 768px) 40vw, (max-width: 1024px) 50vw, (max-width: 1280px) 65vw, 750px"
                   priority
                 />
 
                 {/* Circular Badge - Positioned for Balance */}
-                <div className="absolute bottom-12 left-4 sm:left-8 lg:left-4 xl:left-8 z-30">
+                <div className="absolute bottom-4 left-6 sm:left-2 md:-left-7 lg:left-4 xl:left-8 z-30">
                   <CircularBadge isVisible={isVisible} />
                 </div>
               </div>
