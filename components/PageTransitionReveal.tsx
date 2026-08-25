@@ -2,24 +2,26 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { markIntroComplete } from "@/lib/intro-session";
+import { markIntroComplete, hasIntroPlayed } from "@/lib/intro-session";
 
 const TOTAL_BARS = 18;
 
 export default function PageTransitionReveal() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
-    // Internal route visits should never replay the cinematic intro.
-    markIntroComplete();
+    // Only show Page Loader on client-side route transitions (after initial site preloader has finished)
+    if (hasIntroPlayed()) {
+      setIsVisible(true);
+      const timer = setTimeout(() => {
+        setIsVisible(false);
+      }, 650);
 
-    // Display page loader for smooth transition, then exit cleanly
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-    }, 650);
-
-    return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
+    } else {
+      markIntroComplete();
+    }
   }, []);
 
   if (prefersReducedMotion) return null;

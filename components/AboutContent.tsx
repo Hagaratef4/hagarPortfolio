@@ -96,14 +96,14 @@ const SKILLS_EXPERTISE = [
     subtitle: "Fluid Layouts • Mobile-First • Adaptive Viewports",
     tags: ["Container Queries", "Flexbox & Grid", "Media Queries"],
   },
+  // {
+  //   id: "04",
+  //   title: "INTERACTIVE EXPERIENCES",
+  //   subtitle: "Framer Motion • Page Transitions • Micro-Animations",
+  //   tags: ["Framer Motion", "Page Reveals", "Gesture Logic"],
+  // },
   {
     id: "04",
-    title: "INTERACTIVE EXPERIENCES",
-    subtitle: "Framer Motion • Page Transitions • Micro-Animations",
-    tags: ["Framer Motion", "Page Reveals", "Gesture Logic"],
-  },
-  {
-    id: "05",
     title: "API & DATA INTEGRATION",
     subtitle: "REST APIs • Dynamic State • Async Data Fetching",
     tags: ["Fetch / Axios", "State Management", "JSON APIs"],
@@ -121,7 +121,6 @@ const TECH_STACK_TAGS = [
   "REST APIs",
   "Git",
   "GitHub",
-  "Framer Motion",
   "Vercel",
 ];
 
@@ -173,7 +172,7 @@ export default function AboutContent() {
         {/* Editorial Headline */}
         <motion.h1
           variants={reveal}
-          className="font-serif text-[clamp(2.8rem,6.5vw,5.5rem)] leading-[0.92] tracking-tight text-charcoal"
+          className="font-serif text-[clamp(1.8rem,4.5vw,4.5rem)] leading-[0.92] tracking-tight text-charcoal"
         >
           I BUILD DIGITAL <br />
           <span className="italic text-olive font-serif">EXPERIENCES</span> THAT MATTER.
@@ -182,7 +181,7 @@ export default function AboutContent() {
         {/* Subtitle */}
         <motion.p
           variants={reveal}
-          className="max-w-2xl font-sans text-lg leading-relaxed text-charcoal/80 md:text-xl"
+          className="max-w-xl font-sans text-lg leading-relaxed text-charcoal/80 md:text-xl"
         >
           I&apos;m Hagar Atef, a Frontend Developer dedicated to turning ideas into polished, responsive, and intuitive web applications built with modern web technologies.
         </motion.p>
@@ -212,10 +211,10 @@ export default function AboutContent() {
             </div>
 
             <SafeImage
-              src="/images/my_photo-removebg-preview.png"
+              src="/images/photo-Photoroom.png"
               alt="Hagar Atef portrait"
               fill
-              className="object-cover object-top"
+              className="object-cover object-top mt-15"
               sizes="(max-width: 768px) 100vw, 400px"
               priority
             />
@@ -320,10 +319,10 @@ export default function AboutContent() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-charcoal/10 flex items-center justify-between font-sans text-[11px] tracking-wider text-charcoal/50 group-hover:text-olive">
+                {/* <div className="mt-6 pt-4 border-t border-charcoal/10 flex items-center justify-between font-sans text-[11px] tracking-wider text-charcoal/50 group-hover:text-olive">
                   <span>EXPLORE</span>
                   <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </div>
+                </div> */}
               </motion.div>
             );
           })}

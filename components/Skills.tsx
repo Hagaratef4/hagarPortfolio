@@ -85,13 +85,13 @@ export default function Skills() {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
-              <p className="font-serif text-3xl md:text-4xl text-olive mb-2">3+</p>
+              <p className="font-serif text-3xl md:text-4xl text-olive mb-2">2+</p>
               <p className="font-sans text-xs tracking-[0.15em] text-charcoal/60 uppercase">
                 Years Experience
               </p>
             </div>
             <div>
-              <p className="font-serif text-3xl md:text-4xl text-olive mb-2">10+</p>
+              <p className="font-serif text-3xl md:text-4xl text-olive mb-2">7+</p>
               <p className="font-sans text-xs tracking-[0.15em] text-charcoal/60 uppercase">
                 Projects Completed
               </p>

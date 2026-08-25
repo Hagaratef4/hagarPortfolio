@@ -33,7 +33,7 @@ export default function CircularBadge({
       >
         <motion.svg
           viewBox="0 0 120 120"
-          className="h-full w-full text-charcoal transition-colors duration-300 group-hover:text-olive"
+          className="h-full w-full text-charcoal transition-colors duration-300 group-hover:text-cream"
           animate={prefersReducedMotion ? {} : { rotate: 360 }}
           transition={
             prefersReducedMotion

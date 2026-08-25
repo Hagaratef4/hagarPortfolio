@@ -177,17 +177,17 @@ export default function Hero({ isVisible }: HeroProps) {
               {/* Large Portrait */}
               <div className="relative z-10 min-w-100 flex items-start justify-center">
                 <Image
-                  src="/images/my_photo-removebg-preview.png"
+                  src="/images/IMG_1577-Photoroom.png"
                   alt="Hagar Atef portrait"
                   width={800}
                   height={1067}
-                  className="relative z-10 w-[75%] sm:w-[70%] md:w-[65%] lg:w-[75%] xl:w-[80%] max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[750px] xl:max-w-[850px] h-auto object-contain object-bottom drop-shadow-2xl translate-x-[-150px]"
+                  className="relative z-10 w-[75%] sm:w-[70%] md:w-[65%] lg:w-[75%] xl:w-[80%] max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[750px] xl:max-w-[850px] h-auto object-contain object-bottom drop-shadow-2xl"
                   sizes="(max-width: 768px) 75vw, (max-width: 1200px) 65vw, 750px"
                   priority
                 />
 
                 {/* Circular Badge - Positioned for Balance */}
-                <div className="absolute bottom-12 left-4 sm:left-8 lg:left-4 xl:left-8 z-30 translate-x-[240px]">
+                <div className="absolute bottom-12 left-4 sm:left-8 lg:left-4 xl:left-8 z-30">
                   <CircularBadge isVisible={isVisible} />
                 </div>
               </div>
