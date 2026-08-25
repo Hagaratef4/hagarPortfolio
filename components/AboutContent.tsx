@@ -122,7 +122,7 @@ const TECH_STACK_TAGS = [
   "Git",
   "GitHub",
   "Framer Motion",
-  "Vite",
+  "Vercel",
 ];
 
 export default function AboutContent() {

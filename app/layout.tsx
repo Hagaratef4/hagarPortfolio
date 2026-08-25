@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-cream text-charcoal font-sans">
+        <ScrollToTop />
         {children}
       </body>
     </html>

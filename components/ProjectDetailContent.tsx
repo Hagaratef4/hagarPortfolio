@@ -152,7 +152,7 @@ export default function ProjectDetailContent({
               YEAR
             </span>
             <span className="mt-1 block font-sans text-sm font-medium text-charcoal">
-              2026
+              {project.year}
             </span>
           </div>
         </motion.div>

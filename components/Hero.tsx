@@ -107,13 +107,13 @@ export default function Hero({ isVisible }: HeroProps) {
               <h1 className="font-serif font-normal tracking-tight text-charcoal leading-[0.88]">
                 <motion.span
                   variants={itemVariants}
-                  className="block text-[clamp(4rem,12vw,9rem)]"
+                  className="block text-[clamp(4rem,12vw,7rem)]"
                 >
                   FRONTEND
                 </motion.span>
                 <motion.span
                   variants={itemVariants}
-                  className="block text-[clamp(4rem,12vw,9rem)] ml-4 md:ml-8 lg:ml-12"
+                  className="block text-[clamp(4rem,12vw,7rem)] ml-4 md:ml-8 lg:ml-12"
                 >
                   DEVELOPER
                 </motion.span>
@@ -162,7 +162,7 @@ export default function Hero({ isVisible }: HeroProps) {
               variants={portraitVariants}
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
-              className="relative lg:col-span-7 flex items-end justify-center lg:justify-end min-h-[500px] sm:min-h-[600px] lg:min-h-[700px]"
+              className="relative lg:col-span-6 flex items-end justify-center lg:justify-end min-h-[500px] sm:min-h-[600px] lg:min-h-[700px]"
             >
               {/* Organic Green Shape - Behind Portrait */}
               <motion.div
@@ -175,19 +175,19 @@ export default function Hero({ isVisible }: HeroProps) {
               </motion.div>
 
               {/* Large Portrait */}
-              <div className="relative z-10 w-full flex items-start justify-center lg:justify-end">
+              <div className="relative z-10 min-w-100 flex items-start justify-center">
                 <Image
                   src="/images/my_photo-removebg-preview.png"
                   alt="Hagar Atef portrait"
                   width={800}
                   height={1067}
-                  className="relative z-10 w-[75%] sm:w-[70%] md:w-[65%] lg:w-[75%] xl:w-[80%] max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[750px] xl:max-w-[850px] h-auto object-contain object-bottom drop-shadow-2xl"
+                  className="relative z-10 w-[75%] sm:w-[70%] md:w-[65%] lg:w-[75%] xl:w-[80%] max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[750px] xl:max-w-[850px] h-auto object-contain object-bottom drop-shadow-2xl translate-x-[-150px]"
                   sizes="(max-width: 768px) 75vw, (max-width: 1200px) 65vw, 750px"
                   priority
                 />
 
                 {/* Circular Badge - Positioned for Balance */}
-                <div className="absolute bottom-12 left-4 sm:left-8 lg:left-4 xl:left-8 z-30">
+                <div className="absolute bottom-12 left-4 sm:left-8 lg:left-4 xl:left-8 z-30 translate-x-[240px]">
                   <CircularBadge isVisible={isVisible} />
                 </div>
               </div>
@@ -197,11 +197,11 @@ export default function Hero({ isVisible }: HeroProps) {
                 initial={{ opacity: 0 }}
                 animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
-                className="absolute top-8 right-8 lg:right-12 font-sans text-[10px] tracking-[0.3em] text-charcoal/30 uppercase hidden sm:block"
+                className="absolute top-8 right-8 lg:right-12 font-sans text-[10px] tracking-[0.3em] text-charcoal/70 uppercase hidden sm:block"
               >
                 <div className="flex flex-col items-end gap-1">
                   <span>Portfolio</span>
-                  <span className="text-olive/60">2026</span>
+                  <span className="text-olive/">2026</span>
                 </div>
               </motion.div>
             </motion.div>

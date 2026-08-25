@@ -91,6 +91,9 @@ function DecoGraphic() {
 const CONTACT_INFO = [
   { label: "EMAIL", value: "hagaratef153@gmail.com", href: "hagaratef153@gmail.com" },
   { label: "PHONE", value: "+20 105 549 2879", href: "tel:+201055492879" },
+  { label: "LINKEDIN", value: "https://www.linkedin.com/in/hagar-atef-37420626a", href: "https://www.linkedin.com/in/hagar-atef-37420626a", external: true },
+  { label: "GITHUB", value: "https://github.com/Hagaratef4", href: "https://github.com/Hagaratef4", external: true },
+  { label: "WHATSAPP", value: "+20 105 549 2879", href: "https://wa.me/201055492879", external: true },
   { label: "LOCATION", value: "Giza, 6th of october" },
 ];
 
@@ -277,7 +280,7 @@ export default function ContactContent() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-40px" }}
-            className="lg:mt-16"
+            className=""
           >
             <motion.div
               variants={reveal}
@@ -303,6 +306,9 @@ export default function ContactContent() {
                   {item.href ? (
                     <a
                       href={item.href}
+                      target={item.external ? "_blank" : undefined}
+                      rel={item.external ? "noopener noreferrer" : undefined}
+                      aria-label={item.external ? `Visit ${item.value}` : undefined}
                       className="inline-flex items-center gap-2 font-sans text-base text-charcoal/80 transition-colors duration-300 hover:text-olive md:text-lg"
                     >
                       {item.value}
