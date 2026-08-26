@@ -157,7 +157,7 @@ export default function AboutContent() {
         {/* Label */}
         <motion.div variants={reveal} className="flex items-center gap-4">
           <span className="font-sans text-xs tracking-[0.3em] text-olive font-semibold">
-            01 / ABOUT
+            02 / ABOUT
           </span>
           <motion.span
             variants={line}
@@ -235,9 +235,9 @@ export default function AboutContent() {
         <motion.div variants={reveal} className="lg:col-span-7 flex flex-col gap-6">
           <div className="flex items-center gap-3">
             <span className="font-sans text-xs tracking-[0.25em] text-olive font-semibold">
-              MY APPROACH
+              01 / MY APPROACH
             </span>
-            <span className="h-px w-8 bg-olive/40" />
+            {/* <span className="h-px w-8 bg-olive/40" /> */}
           </div>
 
           <h2 className="font-serif text-3xl text-charcoal sm:text-4xl leading-tight">
@@ -381,9 +381,9 @@ export default function AboutContent() {
                   ))}
                 </div>
 
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-charcoal/20 text-charcoal transition-all duration-300 group-hover:border-olive group-hover:bg-olive group-hover:text-charcoal">
+                {/* <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-charcoal/20 text-charcoal transition-all duration-300 group-hover:border-olive group-hover:bg-olive group-hover:text-charcoal">
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </div>
+                </div> */}
               </div>
             </motion.div>
           ))}
