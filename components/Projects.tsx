@@ -74,7 +74,7 @@ export default function Projects() {
   return (
     <section
       id="work"
-      className="relative bg-cream px-6 py-24 md:py-32 lg:py-15 lg:px-30 overflow-hidden"
+      className="relative bg-cream px-6 py-24 md:py-32 lg:py-15 lg:px-30 overflow-hidden border-t border-neutral/30"
       aria-labelledby="work-heading"
     >
       {/* Background Pattern */}
@@ -109,7 +109,7 @@ export default function Projects() {
         >
           <motion.div variants={revealVariants} className="flex items-center gap-4 mb-4">
             <span className="font-sans text-[10px] tracking-[0.3em] text-olive uppercase">
-              02 — Selected Work
+              03 — Selected Work
             </span>
             <span className="h-px w-12 bg-olive/20" />
           </motion.div>

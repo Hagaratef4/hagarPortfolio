@@ -14,7 +14,7 @@ export default function FinalCTA() {
 
   return (
     <section
-      className="bg-cream py-24 md:py-32 px-6 md:px-10 lg:px-16 border-t border-neutral/30"
+      className="bg-cream px-6 py-24 md:py-32 lg:py-15 lg:px-30 overflow-hidden border-t border-neutral/30"
       aria-labelledby="cta-heading"
     >
       <div className="mx-auto max-w-[1600px]">

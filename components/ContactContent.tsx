@@ -90,10 +90,10 @@ function DecoGraphic() {
 
 const CONTACT_INFO = [
   { label: "EMAIL", value: "hagaratef153@gmail.com", href: "hagaratef153@gmail.com" },
-  { label: "PHONE", value: "+20 105 549 2879", href: "tel:+201055492879" },
+  { label: "WHATSAPP", value: "+20 105 549 2879", href: "https://wa.me/201055492879", external: true },
   { label: "LINKEDIN", value: "https://www.linkedin.com/in/hagar-atef-37420626a", href: "https://www.linkedin.com/in/hagar-atef-37420626a", external: true },
   { label: "GITHUB", value: "https://github.com/Hagaratef4", href: "https://github.com/Hagaratef4", external: true },
-  { label: "WHATSAPP", value: "+20 105 549 2879", href: "https://wa.me/201055492879", external: true },
+  { label: "PHONE", value: "+20 105 549 2879", href: "tel:+201055492879" },
   { label: "LOCATION", value: "Giza, 6th of october" },
 ];
 
@@ -139,6 +139,7 @@ export default function ContactContent() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const reveal = prefersReducedMotion ? reducedFade : fadeUp;
   const fade = prefersReducedMotion ? reducedFade : fadeIn;
@@ -180,21 +181,28 @@ export default function ContactContent() {
     }
 
     setIsSubmitting(true);
+    setSubmitError(null);
 
-    /*
-     * TODO: Connect your email service here.
-     * Example:
-     *   await fetch("/api/contact", {
-     *     method: "POST",
-     *     headers: { "Content-Type": "application/json" },
-     *     body: JSON.stringify(formData),
-     *   });
-     */
-    await new Promise((r) => setTimeout(r, 1200));
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({ name: "", email: "", projectType: "", subject: "", message: "" });
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setFormData({ name: "", email: "", projectType: "", subject: "", message: "" });
+    } catch (error) {
+      setIsSubmitting(false);
+      setSubmitError(error instanceof Error ? error.message : "Failed to send message. Please try again.");
+    }
   };
 
   /* shared input class */
@@ -362,7 +370,10 @@ export default function ContactContent() {
                 </p>
                 <button
                   type="button"
-                  onClick={() => setIsSubmitted(false)}
+                  onClick={() => {
+                    setIsSubmitted(false);
+                    setSubmitError(null);
+                  }}
                   className="group mt-6 inline-flex items-center gap-2 font-sans text-sm tracking-[0.15em] text-charcoal transition-colors hover:text-olive"
                 >
                   SEND ANOTHER
@@ -507,6 +518,9 @@ export default function ContactContent() {
 
                 {/* Submit */}
                 <motion.div variants={reveal} className="pt-2">
+                  {submitError && (
+                    <p className="mb-4 font-sans text-xs text-red-500/80">{submitError}</p>
+                  )}
                   <button
                     type="submit"
                     disabled={isSubmitting}

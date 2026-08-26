@@ -31,7 +31,7 @@ export default function AboutIntro() {
   return (
     <section
       id="about"
-      className="bg-cream px-6 py-24 md:py-32 lg:py-40 lg:px-16"
+      className="bg-cream px-6 py-24 md:py-32 lg:py-15 lg:px-30 overflow-hidden border-t border-neutral/30"
       aria-labelledby="about-heading"
     >
       <div className="mx-auto max-w-[1600px]">
@@ -44,7 +44,7 @@ export default function AboutIntro() {
         >
           <div className="mb-8">
             <p className="mb-4 font-sans text-[11px] tracking-[0.3em] text-olive uppercase">
-              03 — About
+              02 — About
             </p>
             <h2
               id="about-heading"
