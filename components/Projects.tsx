@@ -128,7 +128,7 @@ export default function Projects() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="relative h-[900px] md:h-[1000px] lg:h-[1100px]"
+          className="relative min-h-[800px] md:min-h-[900px] lg:h-[1100px]"
         >
           {/* Decorative Circle Outline */}
           <motion.div
@@ -152,16 +152,17 @@ export default function Projects() {
           <motion.div
             variants={revealVariants}
             style={{ y: parallax1 }}
-            className="absolute top-[5%] left-[5%] right-[25%] md:right-[30%] lg:right-[35%] z-20"
+            className="relative w-full mb-8 md:mb-10 lg:absolute lg:top-[5%] lg:left-[5%] lg:w-[45%] lg:z-20"
           >
             <Link href={`/projects/${colonAI.slug}`} className="block group">
               <motion.div
                 whileHover={{ scale: 1.015, rotate: 0.5 }}
+                whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.6, ease }}
                 className="relative"
               >
                 {/* Main Panel */}
-                <div className="relative aspect-[16/10] md:aspect-[16/9] overflow-hidden bg-neutral/15 rounded-lg shadow-2xl ">
+                <div className="relative aspect-[16/10] md:aspect-[16/9] lg:aspect-[3/2] overflow-hidden bg-neutral/15 rounded-lg shadow-2xl">
                   <SafeImage
                     src={colonAI.image}
                     alt={`${colonAI.title} preview`}
@@ -175,36 +176,33 @@ export default function Projects() {
                   />
                 </div>
 
-                {/* Project Number - Overlapping Top Left */}
+                {/* Project Number - Mobile/Tablet */}
                 <motion.div
                   variants={floatVariants}
-                  className="absolute -top-6 -left-6 w-20 h-20 md:w-24 md:h-24 bg-olive rounded-full flex items-center justify-center shadow-xl border-4 border-cream"
+                  className="lg:hidden flex absolute -top-4 -left-4 w-16 h-16 md:w-20 md:h-20 bg-olive rounded-full items-center justify-center shadow-xl border-4 border-cream"
+                >
+                  <span className="font-serif text-2xl md:text-3xl text-charcoal font-light">01</span>
+                </motion.div>
+
+                {/* Project Number - Desktop Only */}
+                <motion.div
+                  variants={floatVariants}
+                  className="hidden lg:flex absolute -top-6 -left-6 w-20 h-20 md:w-24 md:h-24 bg-olive rounded-full items-center justify-center shadow-xl border-4 border-cream"
                 >
                   <span className="font-serif text-3xl md:text-4xl text-charcoal font-light">01</span>
                 </motion.div>
 
-                {/* Project Title - Overlapping Bottom */}
-                <motion.div
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 0, y: 15 }}
-                  whileHover={{ opacity: 1, y: 0 }}
-                  className="absolute bottom-0 left-0 right-0 p-4 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl border border-charcoal/5"
-                >
-                  {/* <span className="inline-block mb-1 font-sans text-[9px] tracking-[0.3em] text-olive uppercase">
-                    Graduation Project
-                  </span> */}
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-serif text-lg md:text-xl text-charcoal leading-tight">
-                      {colonAI.title}
-                    </h3>
-                    <ArrowUpRight className="h-5 w-5 text-olive" strokeWidth={1.5} />
-                  </div>
-                </motion.div>
+                {/* Project Title - Below Image (All Devices) */}
+                <div className="mt-4">
+                  <h3 className="font-serif text-lg md:text-xl text-charcoal leading-tight">
+                    {colonAI.title}
+                  </h3>
+                </div>
 
-                {/* Tech Labels - Floating Right */}
+                {/* Tech Labels - Desktop Only */}
                 <motion.div
                   variants={floatSlowVariants}
-                  className="absolute -right-4 top-1/2 -translate-y-1/2 flex flex-col gap-2"
+                  className="hidden lg:flex absolute -right-4 top-1/2 -translate-y-1/2 flex-col gap-2"
                 >
                   {colonAI.tags.slice(0, 2).map((tag) => (
                     <span
@@ -223,53 +221,54 @@ export default function Projects() {
           <motion.div
             variants={revealVariants}
             style={{ y: parallax2 }}
-            className="absolute top-[35%] right-[5%] md:right-[8%] w-[55%] md:w-[50%] z-30"
+            className="relative w-full mb-8 md:mb-10 lg:absolute lg:top-[35%] lg:right-[5%] lg:w-[40%] lg:z-30"
           >
             <Link href={`/projects/${eCommerce.slug}`} className="block group">
               <motion.div
                 whileHover={{ scale: 1.05, y: -10 }}
+                whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.5, ease }}
                 className="relative"
               >
                 {/* Panel */}
-                <div className="relative aspect-[16/10] md:aspect-[16/9] overflow-hidden bg-neutral/15 rounded-lg shadow-xl">
+                <div className="relative aspect-[16/10] md:aspect-[16/9] lg:aspect-[4/3] overflow-hidden bg-neutral/15 rounded-lg shadow-xl">
                   <SafeImage
                     src={eCommerce.image}
                     alt={`${eCommerce.title} preview`}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 45vw, 35vw"
+                    sizes="(max-width: 768px) 90vw, 60vw"
                   />
                   <motion.div
                     className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/8 transition-colors duration-500"
                   />
                 </div>
 
-                {/* Number Badge - Top Right */}
+                {/* Number Badge - Mobile/Tablet */}
                 <motion.div
                   variants={floatVariants}
-                  className="absolute -top-3 -right-3 w-14 h-14 bg-charcoal rounded-full flex items-center justify-center shadow-lg"
+                  className="lg:hidden flex absolute -top-2 -right-2 w-12 h-12 md:w-14 md:h-14 bg-charcoal rounded-full items-center justify-center shadow-lg"
+                >
+                  <span className="font-serif text-xl md:text-2xl text-cream font-light">02</span>
+                </motion.div>
+
+                {/* Number Badge - Desktop Only */}
+                <motion.div
+                  variants={floatVariants}
+                  className="hidden lg:flex absolute -top-3 -right-3 w-14 h-14 bg-charcoal rounded-full items-center justify-center shadow-lg"
                 >
                   <span className="font-serif text-2xl text-cream font-light">02</span>
                 </motion.div>
 
-                {/* Info Overlay */}
-                <motion.div
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 0, y: 15 }}
-                  whileHover={{ opacity: 1, y: 0 }}
-                  className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-charcoal/95 via-charcoal/80 to-transparent"
-                >
-                  <h3 className="font-serif text-base text-cream leading-tight mb-1">
+                {/* Project Title - Below Image (All Devices) */}
+                <div className="mt-4">
+                  <h3 className="font-serif text-lg md:text-xl text-charcoal leading-tight">
                     {eCommerce.title}
                   </h3>
-                  {/* <p className="font-sans text-[10px] text-cream/70 line-clamp-1">
-                    {eCommerce.description}
-                  </p> */}
-                </motion.div>
+                </div>
 
-                {/* Decorative Line */}
-                <div className="absolute -left-8 top-1/2 w-12 h-px bg-olive/40" />
+                {/* Decorative Line - Desktop Only */}
+                <div className="hidden lg:block absolute -left-8 top-1/2 w-12 h-px bg-olive/40" />
               </motion.div>
             </Link>
           </motion.div>
@@ -278,16 +277,17 @@ export default function Projects() {
           <motion.div
             variants={revealVariants}
             style={{ y: parallax3 }}
-            className="absolute top-[55%] left-[5%] right-[25%] md:right-[30%] lg:right-[35%] z-10"
+            className="relative w-full mb-8 md:mb-10 lg:absolute lg:top-[55%] lg:left-[5%] lg:w-[45%] lg:z-10"
           >
             <Link href={`/projects/${yummyMenu.slug}`} className="block group">
               <motion.div
                 whileHover={{ scale: 1.015, rotate: 0.5 }}
+                whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.6, ease }}
                 className="relative"
               >
                 {/* Panel */}
-                <div className="relative aspect-[16/10] md:aspect-[16/9] overflow-hidden bg-neutral/15 rounded-lg shadow-2xl">
+                <div className="relative aspect-[16/10] md:aspect-[16/9] lg:aspect-[16/10] overflow-hidden bg-neutral/15 rounded-lg shadow-2xl">
                   <SafeImage
                     src={yummyMenu.image}
                     alt={`${yummyMenu.title} preview`}
@@ -300,33 +300,33 @@ export default function Projects() {
                   />
                 </div>
 
-                {/* Project Number - Overlapping Top Left */}
+                {/* Project Number - Mobile/Tablet */}
                 <motion.div
                   variants={floatVariants}
-                  className="absolute -top-6 -left-6 w-20 h-20 md:w-24 md:h-24 bg-olive rounded-full flex items-center justify-center shadow-xl border-4 border-cream"
+                  className="lg:hidden flex absolute -top-4 -left-4 w-16 h-16 md:w-20 md:h-20 bg-olive rounded-full items-center justify-center shadow-xl border-4 border-cream"
+                >
+                  <span className="font-serif text-2xl md:text-3xl text-charcoal font-light">03</span>
+                </motion.div>
+
+                {/* Project Number - Desktop Only */}
+                <motion.div
+                  variants={floatVariants}
+                  className="hidden lg:flex absolute -top-6 -left-6 w-20 h-20 md:w-24 md:h-24 bg-olive rounded-full items-center justify-center shadow-xl border-4 border-cream"
                 >
                   <span className="font-serif text-3xl md:text-4xl text-charcoal font-light">03</span>
                 </motion.div>
 
-                {/* Project Title - Overlapping Bottom */}
-                <motion.div
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={false}
-                  whileHover={{ opacity: 1, y: 0 }}
-                  className="absolute bottom-0 left-0 right-0 p-4 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl border border-charcoal/5"
-                >
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-serif text-lg md:text-xl text-charcoal leading-tight">
-                      {yummyMenu.title}
-                    </h3>
-                    {/* <ArrowUpRight className="h-5 w-5 text-olive" strokeWidth={1.5} /> */}
-                  </div>
-                </motion.div>
+                {/* Project Title - Below Image (All Devices) */}
+                <div className="mt-4">
+                  <h3 className="font-serif text-lg md:text-xl text-charcoal leading-tight">
+                    {yummyMenu.title}
+                  </h3>
+                </div>
 
-                {/* Tech Labels - Floating Right */}
+                {/* Tech Labels - Desktop Only */}
                 <motion.div
                   variants={floatSlowVariants}
-                  className="absolute -right-4 top-1/2 -translate-y-1/2 flex flex-col gap-2"
+                  className="hidden lg:flex absolute -right-4 top-1/2 -translate-y-1/2 flex-col gap-2"
                 >
                   {yummyMenu.tags.slice(0, 2).map((tag) => (
                     <span
