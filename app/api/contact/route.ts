@@ -32,10 +32,25 @@ export async function POST(request: Request) {
       );
     }
 
+    // Sanitize and validate recipient email
+    const recipientEmail = (process.env.CONTACT_EMAIL || 'hagaratef153@gmail.com')
+      .trim()
+      .replace(/[^\x00-\x7F]/g, '') // Remove non-ASCII characters
+      .replace(/\\/g, ''); // Remove backslashes
+
+    // Validate recipient email format
+    if (!emailRegex.test(recipientEmail)) {
+      console.error('Invalid recipient email format:', recipientEmail);
+      return NextResponse.json(
+        { error: 'Invalid recipient email configuration' },
+        { status: 500 }
+      );
+    }
+
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>',
-      to: process.env.CONTACT_EMAIL || 'hagaratef153@gmail.com',
+      to: recipientEmail,
       subject: `Portfolio Contact: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
