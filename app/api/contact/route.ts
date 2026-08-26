@@ -32,27 +32,37 @@ export async function POST(request: Request) {
       );
     }
 
-    // Get and sanitize recipient email
-    const rawContactEmail = process.env.CONTACT_EMAIL?.trim() || 'hagaratef153@gmail.com';
-    console.log('Raw CONTACT_EMAIL from env:', process.env.CONTACT_EMAIL);
-    console.log('Recipient email after trim:', rawContactEmail);
+    // Get recipient email with defensive fallback
+    const envEmail = process.env.CONTACT_EMAIL;
+    console.log('CONTACT_EMAIL env variable exists:', !!envEmail);
+    console.log('CONTACT_EMAIL env value:', envEmail);
 
-    // Remove only problematic characters (backslashes and non-ASCII)
-    const recipientEmail = rawContactEmail
-      .replace(/\\/g, '') // Remove backslashes
-      .replace(/[^\x00-\x7F]/g, ''); // Remove non-ASCII characters
+    // Use environment variable if valid, otherwise use fallback
+    let recipientEmail = 'hagaratef153@gmail.com';
+    
+    if (envEmail && envEmail.trim()) {
+      const trimmed = envEmail.trim();
+      // Only use env email if it passes basic validation
+      if (emailRegex.test(trimmed)) {
+        recipientEmail = trimmed;
+        console.log('Using CONTACT_EMAIL from environment:', recipientEmail);
+      } else {
+        console.warn('CONTACT_EMAIL failed validation, using fallback');
+      }
+    } else {
+      console.log('CONTACT_EMAIL not set or empty, using fallback');
+    }
 
-    console.log('Recipient email after sanitization:', recipientEmail);
-
-    // Validate recipient email format
+    // Final validation
     if (!emailRegex.test(recipientEmail)) {
-      console.error('Invalid recipient email format:', recipientEmail);
-      console.error('Raw value was:', rawContactEmail);
+      console.error('Final recipient email validation failed:', recipientEmail);
       return NextResponse.json(
         { error: 'Invalid recipient email configuration' },
         { status: 500 }
       );
     }
+
+    console.log('Final recipient email to use:', recipientEmail);
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
