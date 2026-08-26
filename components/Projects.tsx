@@ -192,11 +192,21 @@ export default function Projects() {
                   <span className="font-serif text-3xl md:text-4xl text-charcoal font-light">01</span>
                 </motion.div>
 
-                {/* Project Title - Below Image (All Devices) */}
-                <div className="mt-4">
+                {/* Project Title - Mobile/Tablet Below Image */}
+                <div className="lg:hidden mt-4">
                   <h3 className="font-serif text-lg md:text-xl text-charcoal leading-tight">
                     {colonAI.title}
                   </h3>
+                </div>
+
+                {/* Project Title - Desktop Hover Overlay */}
+                <div className="hidden lg:block absolute bottom-0 left-0 right-0 p-4 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl border border-charcoal/5 pointer-events-none opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-serif text-lg md:text-xl text-charcoal leading-tight">
+                      {colonAI.title}
+                    </h3>
+                    <ArrowUpRight className="h-5 w-5 text-olive" strokeWidth={1.5} />
+                  </div>
                 </div>
 
                 {/* Tech Labels - Desktop Only */}
@@ -260,9 +270,16 @@ export default function Projects() {
                   <span className="font-serif text-2xl text-cream font-light">02</span>
                 </motion.div>
 
-                {/* Project Title - Below Image (All Devices) */}
-                <div className="mt-4">
+                {/* Project Title - Mobile/Tablet Below Image */}
+                <div className="lg:hidden mt-4">
                   <h3 className="font-serif text-lg md:text-xl text-charcoal leading-tight">
+                    {eCommerce.title}
+                  </h3>
+                </div>
+
+                {/* Project Title - Desktop Hover Overlay */}
+                <div className="hidden lg:block absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-charcoal/95 via-charcoal/80 to-transparent pointer-events-none opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                  <h3 className="font-serif text-base text-cream leading-tight mb-1">
                     {eCommerce.title}
                   </h3>
                 </div>
@@ -316,11 +333,20 @@ export default function Projects() {
                   <span className="font-serif text-3xl md:text-4xl text-charcoal font-light">03</span>
                 </motion.div>
 
-                {/* Project Title - Below Image (All Devices) */}
-                <div className="mt-4">
+                {/* Project Title - Mobile/Tablet Below Image */}
+                <div className="lg:hidden mt-4">
                   <h3 className="font-serif text-lg md:text-xl text-charcoal leading-tight">
                     {yummyMenu.title}
                   </h3>
+                </div>
+
+                {/* Project Title - Desktop Hover Overlay */}
+                <div className="hidden lg:block absolute bottom-0 left-0 right-0 p-4 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl border border-charcoal/5 pointer-events-none opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-serif text-lg md:text-xl text-charcoal leading-tight">
+                      {yummyMenu.title}
+                    </h3>
+                  </div>
                 </div>
 
                 {/* Tech Labels - Desktop Only */}
