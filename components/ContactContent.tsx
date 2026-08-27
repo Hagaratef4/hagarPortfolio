@@ -89,7 +89,7 @@ function DecoGraphic() {
 /* ─── Data ─────────────────────────────────────────────────────────── */
 
 const CONTACT_INFO = [
-  { label: "EMAIL", value: "hagaratef153@gmail.com", href: "hagaratef153@gmail.com" },
+  { label: "EMAIL", value: "hagaratef153@gmail.com", href: "mailto:hagaratef153@gmail.com" },
   { label: "WHATSAPP", value: "+20 105 549 2879", href: "https://wa.me/201055492879", external: true },
   { label: "LINKEDIN", value: "https://www.linkedin.com/in/hagar-atef-37420626a", href: "https://www.linkedin.com/in/hagar-atef-37420626a", external: true },
   { label: "GITHUB", value: "https://github.com/Hagaratef4", href: "https://github.com/Hagaratef4", external: true },
