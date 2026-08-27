@@ -78,7 +78,7 @@ export default function ProjectDetailContent({
             className="h-4 w-4 transition-transform group-hover:-translate-x-1"
             strokeWidth={1.5}
           />
-          <span>BACK TO WORK</span>
+          <span>BACK TO HOME</span>
         </Link>
       </motion.div>
 
