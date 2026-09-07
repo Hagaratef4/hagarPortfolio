@@ -67,7 +67,16 @@ export default function FinalCTA() {
               Based in
             </span>
             <p className="font-serif text-lg text-charcoal/80">
-              Egypt
+              Kuwait & Egypt
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <span className="font-sans text-xs tracking-[0.2em] text-charcoal/70 uppercase">
+              open to
+            </span>
+            <p className="font-serif text-lg text-charcoal/80">
+              opportunities in Egypt & Kuwait 
             </p>
           </div>
           

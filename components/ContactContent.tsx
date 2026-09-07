@@ -93,8 +93,9 @@ const CONTACT_INFO = [
   { label: "WHATSAPP", value: "+20 105 549 2879", href: "https://wa.me/201055492879", external: true },
   { label: "LINKEDIN", value: "https://www.linkedin.com/in/hagar-atef-37420626a", href: "https://www.linkedin.com/in/hagar-atef-37420626a", external: true },
   { label: "GITHUB", value: "https://github.com/Hagaratef4", href: "https://github.com/Hagaratef4", external: true },
+  { label: "PHONE", value: "+965 6629 6373", href: "tel:+965 6629 6373" },
   { label: "PHONE", value: "+20 105 549 2879", href: "tel:+201055492879" },
-  { label: "LOCATION", value: "Giza, 6th of october" },
+  { label: "LOCATION", value: "Kuwait & Egypt" },
 ];
 
 const PROJECT_TYPES = [
